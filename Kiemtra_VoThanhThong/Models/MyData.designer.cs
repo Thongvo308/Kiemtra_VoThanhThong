@@ -552,9 +552,11 @@ namespace Kiemtra_VoThanhThong.Models
 		private EntitySet<ChiTietDangKy> _ChiTietDangKies;
 		
 		private EntityRef<SinhVien> _SinhVien;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
+        internal int iSoluong;
+        private int id;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void OnMaDKChanging(int value);
@@ -571,8 +573,13 @@ namespace Kiemtra_VoThanhThong.Models
 			this._SinhVien = default(EntityRef<SinhVien>);
 			OnCreated();
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDK", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+
+        public DangKy(int id)
+        {
+            this.id = id;
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDK", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int MaDK
 		{
 			get
@@ -729,9 +736,11 @@ namespace Kiemtra_VoThanhThong.Models
 		private System.Nullable<int> _SoTinChi;
 		
 		private EntitySet<ChiTietDangKy> _ChiTietDangKies;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
+        private string id;
+        internal int iSoluong;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void OnMaHPChanging(string value);
@@ -747,8 +756,13 @@ namespace Kiemtra_VoThanhThong.Models
 			this._ChiTietDangKies = new EntitySet<ChiTietDangKy>(new Action<ChiTietDangKy>(this.attach_ChiTietDangKies), new Action<ChiTietDangKy>(this.detach_ChiTietDangKies));
 			OnCreated();
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHP", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+
+        public HocPhan(string id)
+        {
+            this.id = id;
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHP", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string MaHP
 		{
 			get

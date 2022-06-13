@@ -121,7 +121,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DangKyController.cs" />
     <Compile Include="Controllers\DangNhapController.cs" />
+    <Compile Include="Controllers\HocPhanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SinhVienController.cs" />
     <Compile Include="Global.asax.cs">
@@ -139,6 +141,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\book2.jpeg" />
     <Content Include="Content\images\sv1.jpg" />
     <Content Include="Content\images\sv2.jpg" />
     <Content Include="favicon.ico" />
@@ -186,6 +189,7 @@
     <Content Include="Views\SinhVien\Edit.cshtml" />
     <Content Include="Views\SinhVien\Delete.cshtml" />
     <Content Include="Views\DangNhap\DangNhap.cshtml" />
+    <Content Include="Views\HocPhan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

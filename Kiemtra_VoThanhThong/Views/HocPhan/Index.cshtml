@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Kiemtra_VoThanhThong.Models.HocPhan>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="font-size:20px">Dach sach hoc phan</h2>
+
+<table class="table">
+    <tr>
+        <th> MaHocPhan </th>
+        <th> TenHocPhan </th>
+        <th> SoChungChi </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MaHP)</td>
+            <td>@Html.DisplayFor(modelItem => item.TenHP)</td>
+            <td>@Html.DisplayFor(modelItem => item.SoTinChi)</td>
+            <td class="panel-footer clearfix">
+                <div class="pull-right">
+                    <div class="DangKy">
+                        <a class="btn btn-success" href="@Url.Action("ThemGioHang" , "DangKy", new { @id = item.MaHP, @strUrl = Request.Url.ToString()}) ">Đăng Ký</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+
+
